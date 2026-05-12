@@ -1,5 +1,10 @@
 .gh-head {
-    font-weight: 500;
+  font-weight: 500;
+}
+
+.gh-head-logo > img {
+  height: 18px;
+  width: auto;
 }
 
 /* .gh-head-btn.gh-btn {
@@ -12,3 +17,4 @@
 /* .gh-head-btn.gh-btn:hover {
     opacity: 0.95;
 } */
+
