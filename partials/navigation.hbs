@@ -1,5 +1,11 @@
 {{#if isSecondary}}
-  {{navigation}}
+    {{#foreach navigation}}
+      <li class='{{link_class for=(url) class=(concat 'nav-' slug)}}' role='menuitem'>
+        <a href='{{url absolute='true'}}'>
+          {{label}}
+        </a>
+      </li>
+    {{/foreach}}
 {{else}}
   <ul class='nav' role='menu'>
 
@@ -42,10 +48,10 @@
           <a href='{{@site.url}}/category/business/news/'>Company</a>
         </li>
         <li class='nav-top-lists' role='menuitem'>
-          <a href='{{@site.url}}/fun/top-lists/'>Top Lists</a>
+          <a href='{{@site.url}}/category/fun/top-lists/'>Top Lists</a>
         </li>
         <li class='nav-celebrities' role='menuitem'>
-          <a href='{{@site.url}}/fun/top-lists/'>Celebrities</a>
+          <a href='{{@site.url}}/category/fun/top-lists/'>Celebrities</a>
         </li>
       </ul>
     </li>
