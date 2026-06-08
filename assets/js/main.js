@@ -1,7 +1,6 @@
 $(function () {
     'use strict';
     cover();
-    pagination(true);
     player();
     initNavigation();
 });
