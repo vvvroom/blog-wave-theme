@@ -54,4 +54,4 @@ collections:
 
 taxonomies:
   tag: /category/{slug}/
-
+  author: /author/{slug}/
