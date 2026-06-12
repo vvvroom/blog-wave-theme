@@ -3,47 +3,47 @@ routes:
     template: rss
     content_type: text/xml
 
-# static route tag "fun"
+  # static route category "fun"
   /category/fun/guides-tips/:
     controller: channel
-    filter: tag:fun+tag:guides-tips
+    filter: tag:guides-tips
     template: tag
     data: tag.guides-tips
   /category/fun/travel-destinations/:
     controller: channel
-    filter: tag:fun+tag:travel-destinations
+    filter: tag:travel-destinations
     template: tag
     data: tag.travel-destinations
   /category/fun/top-lists/:
     controller: channel
-    filter: tag:fun+tag:top-lists
+    filter: tag:top-lists
     template: tag
     data: tag.top-lists
   /category/fun/celebrities/:
     controller: channel
-    filter: tag:fun+tag:celebrities
+    filter: tag:celebrities
     template: tag
     data: tag.celebrities
 
-# static route tag "business"
+  # static route category "business"
   /category/business/news/:
     controller: channel
-    filter: tag:business+tag:news
+    filter: tag:news
     template: tag
     data: tag.news
   /category/business/company/:
     controller: channel
-    filter: tag:business+tag:company
+    filter: tag:company
     template: tag
     data: tag.company
   /category/business/interviews/:
     controller: channel
-    filter: tag:business+tag:interviews
+    filter: tag:interviews
     template: tag
     data: tag.interviews
   /category/business/media-and-press/:
     controller: channel
-    filter: tag:business+tag:media-and-press
+    filter: tag:media-and-press
     template: tag
     data: tag.media-and-press
 
@@ -53,5 +53,6 @@ collections:
     template: index
 
 taxonomies:
-  tag: /category/{slug}/
+  tag: /tag/{slug}/
   author: /author/{slug}/
+
