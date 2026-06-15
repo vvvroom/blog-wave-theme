@@ -22,5 +22,53 @@
 }
 
 .single .gh-meta-share {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     margin-top: 32px;
+    flex-wrap: wrap;
+}
+
+.single .gh-share-label {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-text-color);
+}
+
+.single .gh-share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s ease-in-out;
+    color: #fff;
+}
+
+.single .gh-share-btn:hover {
+    opacity: 0.85;
+    color: #fff;
+}
+
+.single .gh-share-twitter {
+    background-color: #000;
+}
+
+.single .gh-share-facebook {
+    background-color: #1877f2;
+}
+
+.single .gh-share-linkedin {
+    background-color: #0a66c2;
+}
+
+.single .gh-share-threads {
+    background-color: #000;
+}
+
+.single .gh-share-mailto {
+    background-color: var(--primary-text-color);
 }

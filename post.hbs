@@ -23,7 +23,22 @@
 
         <div class="gh-canvas">
             <div class="gh-meta-share">
-                <a href="#/share" class="gh-button-share">{{t "Share"}} {{> "icons/share"}}</a>
+                <span class="gh-share-label">{{t "Share"}}</span>
+                <a href="https://twitter.com/intent/tweet?url={{url absolute="true"}}&text={{encode title}}" class="gh-share-btn gh-share-twitter" target="_blank" rel="noopener noreferrer">
+                    {{> "icons/twitter"}} X
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" class="gh-share-btn gh-share-facebook" target="_blank" rel="noopener noreferrer">
+                    {{> "icons/facebook"}} Facebook
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{url absolute="true"}}" class="gh-share-btn gh-share-linkedin" target="_blank" rel="noopener noreferrer">
+                    {{> "icons/linkedin"}} LinkedIn
+                </a>
+                <a href="https://www.threads.net/intent/post?text={{encode title}}%20{{url absolute="true"}}" class="gh-share-btn gh-share-threads" target="_blank" rel="noopener noreferrer">
+                    {{> "icons/threads"}} Threads
+                </a>
+                <a href="mailto:?subject={{encode title}}&body={{url absolute="true"}}" class="gh-share-btn gh-share-mailto">
+                    {{> "icons/email"}} Email
+                </a>
             </div>
         </div>
 
