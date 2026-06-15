@@ -28,12 +28,20 @@
     margin-right: 20px;
     overflow: hidden;
     border-radius: 50%;
+    background-color: #003A70 !important;
+}
+
+.author-image-placeholder img {
+    color: white;
+    text-align: center;
+    align-content: center;
 }
 
 .author-wrapper {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    justify-content: center;
 }
 
 .author-header {

@@ -1,0 +1,71 @@
+{{#if isSecondary}}
+  <ul class='nav' role='menu'>
+    {{#foreach navigation}}
+      <li class='{{link_class for=(url) class=(concat 'nav-' slug)}}' role='menuitem'>
+        <a href='{{url absolute='true'}}'>
+          {{label}}
+        </a>
+      </li>
+    {{/foreach}}
+  </ul>
+{{else}}
+  <ul class='nav' role='menu'>
+
+    <li class='nav-fun nav-dropdown-parent' role='menuitem'>
+      <button class='nav-dropdown-toggle' aria-expanded='false' aria-haspopup='true'>
+        Fun
+        <span class='nav-dropdown-arrow' aria-hidden='true'>▼</span>
+      </button>
+      <ul class='nav-dropdown-menu' role='menu'>
+        <li class='nav-guides-tips' role='menuitem'>
+          <a href='/category/fun/guides-tips'>Guides & Tips</a>
+        </li>
+        <li class='nav-fun-trivia-quizzes' role='menuitem'>
+          <a href='/fun-trivia-quizzes'>Quizzes</a>
+        </li>
+        <li class='nav-travel-destinations' role='menuitem'>
+          <a href='/category/fun/travel-destinations'>Travel Destinations</a>
+        </li>
+          <li class='nav-top-lists' role='menuitem'>
+          <a href='/category/fun/top-lists'>Top Lists</a>
+        </li>
+        <li class='nav-celebrities' role='menuitem'>
+          <a href='/category/fun/celebrities'>Celebrities</a>
+        </li>
+      </ul>
+    </li>
+    <li class='nav-fun nav-dropdown-parent' role='menuitem'>
+      <button class='nav-dropdown-toggle' aria-expanded='false' aria-haspopup='true'>
+        Business
+        <span class='nav-dropdown-arrow' aria-hidden='true'>▼</span>
+      </button>
+      <ul class='nav-dropdown-menu' role='menu'>
+        <li class='nav-about-us' role='menuitem'>
+          <a href='https://www.vroomvroomvroom.com.au/about-us/'>About Us</a>
+        </li>
+        <li class='nav-news' role='menuitem'>
+          <a href='/category/business/news'>News</a>
+        </li>
+        <li class='nav-company' role='menuitem'>
+          <a href='/category/business/company'>Company</a>
+        </li>
+        <li class='nav-interviews' role='menuitem'>
+          <a href='/category/business/interviews'>Interviews</a>
+        </li>
+        <li class='nav-media-and-press' role='menuitem'>
+          <a href='/category/business/media-and-press'>Media and Awards</a>
+        </li>
+      </ul>
+    </li>
+
+    {{#foreach navigation}}
+      <li class='{{link_class for=(url) class=(concat 'nav-' slug)}}' role='menuitem'>
+        <a href='{{url absolute='true'}}'>
+          {{label}}
+        </a>
+      </li>
+    {{/foreach}}
+  </ul>
+
+
+{{/if}}

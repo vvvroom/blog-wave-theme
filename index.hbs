@@ -3,11 +3,17 @@
 <div class="gh-outer">
 <main class="site-main gh-inner">
 
+    <section class="term">
+        <h1 class="term-name">VroomVroomVroom Blog</h1>
+    </section>
+
     <div class="post-feed gh-feed">
         {{#foreach posts}}
             {{> "loop"}}
         {{/foreach}}
     </div>
+
+    {{pagination}}
 
 </main>
 </div>

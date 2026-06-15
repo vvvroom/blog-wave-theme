@@ -1,5 +1,155 @@
 .gh-head {
+  font-weight: 500;
+}
+
+.gh-head-logo > img {
+  height: 18px;
+  width: auto;
+}
+
+/* Dropdown navigation */
+.nav-dropdown-parent {
+    position: relative;
+}
+
+.nav-dropdown-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
     font-weight: 500;
+    font-size: inherit;
+    color: inherit;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    line-height: inherit;
+}
+
+.nav-dropdown-toggle:hover {
+    opacity: 0.8;
+}
+
+.nav-dropdown-arrow {
+    font-size: 0.75em;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.nav-dropdown-parent.is-open > .nav-dropdown-toggle .nav-dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    background: var(--white-color);
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+    min-width: 200px;
+    padding: 6px 0;
+    list-style: none;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+    z-index: 200;
+}
+
+.nav-dropdown-parent:hover > .nav-dropdown-menu,
+.nav-dropdown-parent.is-open > .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: var(--white-color);
+    transform: translateX(-50%) rotate(45deg);
+    box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.nav-dropdown-menu > li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-dropdown-menu > li > a {
+    display: block;
+    padding: 9px 20px;
+    white-space: nowrap;
+    color: var(--primary-text-color);
+    font-size: 1.4rem;
+    font-weight: 500;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav-dropdown-menu > li > a:hover {
+    background: var(--light-gray-color);
+    color: var(--darker-gray-color);
+}
+
+/* Mobile: expand inline — match Ghost's 767px breakpoint */
+@media (max-width: 767px) {
+    /* Match the shared theme's mobile nav link sizing: 2.6rem / 600 weight */
+    #gh-head .nav .nav-dropdown-toggle {
+        font-size: 2.6rem;
+        font-weight: 600;
+        text-transform: none;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        color: inherit;
+    }
+
+    .nav-dropdown-menu {
+        position: static;
+        transform: none !important;
+        box-shadow: none;
+        border-radius: 0;
+        background: transparent;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+        transition: max-height 0.3s ease;
+        min-width: unset;
+    }
+
+    .nav-dropdown-menu::before {
+        display: none;
+    }
+
+    .nav-dropdown-parent.is-open > .nav-dropdown-menu {
+        max-height: 500px;
+    }
+
+    .nav-dropdown-menu > li > a {
+        font-size: inherit;
+        font-weight: inherit;
+        padding: 4px 0;
+        text-align: center;
+        color: inherit;
+        opacity: 0.65;
+        white-space: normal;
+    }
+
+    .nav-dropdown-menu > li > a:hover,
+    .nav-dropdown-menu > li > a:focus {
+        background: transparent;
+        opacity: 1;
+    }
 }
 
 /* .gh-head-btn.gh-btn {
@@ -12,3 +162,4 @@
 /* .gh-head-btn.gh-btn:hover {
     opacity: 0.95;
 } */
+

@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{^is "blog"}}
-        <title>{{meta_title page=(t " (Page %)")}}</title>
+        <title>{{{meta_title page=(t " (Page %)")}}}</title>
     {{else}}
-        <title>{{block "title"}}</title>
+        <title>{{{block "title"}}}</title>
         {{{block "description"}}}
     {{/is}}
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
@@ -23,11 +23,7 @@
             <div class="gh-head-brand">
                 <div class="gh-head-brand-wrapper">
                     <a class="gh-head-logo" href="{{@site.url}}">
-                        {{#if @site.logo}}
-                            <img src="{{@site.logo}}" alt="{{@site.title}}">
-                        {{else}}
-                            {{@site.title}}
-                        {{/if}}
+                        <img src="https://files.vroomvroomvroom.com/vvvblog/assets/images/VroomVroomVroom.svg" alt="VroomVroomVroom – Car Rental and Travel Blog">
                     </a>
                 </div>
                 <button class="gh-search gh-icon-btn" aria-label="{{t "Search this site"}}" data-ghost-search>{{> "icons/search"}}</button>
@@ -50,18 +46,6 @@
                     {{/match}}
                 {{else}}
                     <button class="gh-search gh-icon-btn" aria-label="{{t "Search this site"}}" data-ghost-search>{{> "icons/search"}}</button>
-                    <div class="gh-head-members">
-                        {{#unless @member}}
-                            {{#unless @site.members_invite_only}}
-                                <a class="gh-head-link" href="#/portal/signin" data-portal="signin">{{t "Sign in"}}</a>
-                                <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signup" data-portal="signup">{{t "Subscribe"}}</a>
-                            {{else}}
-                                <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signin" data-portal="signin">{{t "Sign in"}}</a>
-                            {{/unless}}
-                        {{else}}
-                            <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/account" data-portal="account">{{t "Account"}}</a>
-                        {{/unless}}
-                    </div>
                 {{/unless}}
             </div>
         </div>
@@ -108,7 +92,7 @@
                         <span class="subscribe-text">YouTube Music</span>
                     </a>
                 {{/if}}
-                <a href="{{#if @custom.rss_link}}{{@custom.rss_link}}{{else}}{{@site.url}}/rss{{/if}}" class="subscribe-link rss" target="_blank" rel="noopener noreferrer">
+                <a href="{{#if @custom.rss_link}}{{@custom.rss_link}}{{else}}{{@site.url}}/rss/{{/if}}" class="subscribe-link rss" target="_blank" rel="noopener noreferrer">
                     {{> "icons/rss"}}
                     <span class="subscribe-text">RSS</span>
                 </a>
@@ -117,14 +101,14 @@
                 {{navigation type="secondary"}}
             </nav>
             <div class="gh-copyright">
-                {{@site.title}} © {{date format="YYYY"}}. {{{t "Powered by {ghostlink}" ghostlink="<a href=\"https://ghost.org/\" target=\"_blank\" rel=\"noopener\">Ghost</a>"}}}
+                {{@site.title}} © {{date format="YYYY"}}.
             </div>
         </div>
     </footer>
 
-    {{^is "post, page"}}
+    {{!-- {{^is "post, page"}}
         {{> "player"}}
-    {{/is}}
+    {{/is}} --}}
 
 </div>
 

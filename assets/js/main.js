@@ -1,8 +1,8 @@
 $(function () {
     'use strict';
     cover();
-    pagination(true);
     player();
+    initNavigation();
 });
 
 function cover() {
@@ -103,4 +103,41 @@ function player() {
         playerAudio[0].playbackRate = playerSpeed;
         speedButton.text(playerSpeed + 'x');
     });
+}
+
+function initNavigation() {
+    'use strict';
+
+    var $nav = $('.gh-head-menu .nav');
+    if (!$nav.length) return;
+
+    // Click to toggle open/close
+    $nav.on('click', '.nav-dropdown-toggle', function (e) {
+        e.stopPropagation();
+        var $parent = $(this).closest('.nav-dropdown-parent');
+        var isOpen = $parent.hasClass('is-open');
+        closeAll();
+        if (!isOpen) {
+            $parent.addClass('is-open');
+            $(this).attr('aria-expanded', 'true');
+        }
+    });
+
+    // Close when clicking outside
+    $(document).on('click.navDropdown', function (e) {
+        if (!$(e.target).closest('.nav-dropdown-parent').length) {
+            closeAll();
+        }
+    });
+
+    // Close on Escape
+    $(document).on('keydown.navDropdown', function (e) {
+        if (e.key === 'Escape') closeAll();
+    });
+
+
+    function closeAll() {
+        $('.nav-dropdown-parent').removeClass('is-open');
+        $('.nav-dropdown-toggle').attr('aria-expanded', 'false');
+    }
 }
